@@ -1,0 +1,25 @@
+### Get all todos
+GET http://localhost:3000/todos
+
+
+
+### Get single todo (replace the id)
+GET http://localhost:3000/todos/6a9fee18c0ca628aced0954a
+
+### Post a new todo 
+POST http://localhost:3000/todos
+Content-Type: application/json
+
+{ "text": "test todo for redis" }
+
+### Get redis statistics (
+GET http://localhost:3000/todos/statistics
+
+### Update a todo (replace the id)
+PUT http://localhost:3000/todos/6a9fee18c0ca628aced0954b
+Content-Type: application/json
+
+{
+  "text": "Updated via REST Client",
+  "done": true
+}

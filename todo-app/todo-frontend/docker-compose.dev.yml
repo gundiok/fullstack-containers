@@ -1,0 +1,11 @@
+services:
+  app:
+    image: todo-frontend-dev
+    build:
+      context: .
+      dockerfile: dev.Dockerfile 
+    volumes:
+      - ./:/usr/src/app 
+      - /usr/src/app/node_modules
+    container_name: todo-frontend-dev 
+  
