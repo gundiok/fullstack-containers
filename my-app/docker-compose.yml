@@ -1,0 +1,21 @@
+services:
+  app:
+    image: quiz-front
+    build:
+      context: ./frontend
+
+  nginx:
+    image: nginx:1.29
+    volumes:
+      - ./nginx.conf:/etc/nginx/nginx.conf:ro
+    ports:
+      - 8080:80
+    depends_on:
+      - app
+
+  server:
+    image: quiz-back
+    build:
+      context: ./backend
+    env_file:
+      - ./backend/.env
